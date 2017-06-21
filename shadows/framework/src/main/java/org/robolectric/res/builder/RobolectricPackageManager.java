@@ -21,28 +21,6 @@ public interface RobolectricPackageManager {
 
   void doPendingUninstallCallbacks();
 
-  PackageInfo getPackageInfo(String packageName, int flags) throws PackageManager.NameNotFoundException;
-
-  ApplicationInfo getApplicationInfo(String packageName, int flags) throws PackageManager.NameNotFoundException;
-
-  ActivityInfo getActivityInfo(ComponentName className, int flags) throws PackageManager.NameNotFoundException;
-
-  ActivityInfo getReceiverInfo(ComponentName className, int flags) throws PackageManager.NameNotFoundException;
-
-  ServiceInfo getServiceInfo(ComponentName className, int flags) throws PackageManager.NameNotFoundException;
-  
-  List<PackageInfo> getInstalledPackages(int flags);
-
-  List<ResolveInfo> queryIntentActivities(Intent intent, int flags);
-
-  List<ResolveInfo> queryIntentServices(Intent intent, int flags);
-
-  List<ResolveInfo> queryBroadcastReceivers(Intent intent, int flags);
-
-  ResolveInfo resolveActivity(Intent intent, int flags);
-
-  ResolveInfo resolveService(Intent intent, int flags);
-
   void addResolveInfoForIntent(Intent intent, List<ResolveInfo> info);
 
   void addResolveInfoForIntent(Intent intent, ResolveInfo info);
@@ -57,17 +35,9 @@ public interface RobolectricPackageManager {
 
   void addActivityIcon(Intent intent, Drawable d);
 
-  Drawable getApplicationIcon(String packageName) throws PackageManager.NameNotFoundException;
-
   void setApplicationIcon(String packageName, Drawable d);
 
-  Intent getLaunchIntentForPackage(String packageName);
-
-  CharSequence getApplicationLabel(ApplicationInfo info);
-
   void setApplicationEnabledSetting(String packageName, int newState, int flags);
-
-  void setComponentEnabledSetting(ComponentName componentName, int newState, int flags);
 
   void addPreferredActivity(IntentFilter filter, int match, ComponentName[] set, ComponentName activity);
 
@@ -85,8 +55,6 @@ public interface RobolectricPackageManager {
   void addManifest(AndroidManifest androidManifest);
 
   void removePackage(String packageName);
-
-  boolean hasSystemFeature(String name);
 
   void setSystemFeature(String name, boolean supported);
 

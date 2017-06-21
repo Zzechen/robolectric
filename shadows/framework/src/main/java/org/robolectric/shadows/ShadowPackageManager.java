@@ -373,116 +373,6 @@ public class ShadowPackageManager implements RobolectricPackageManager {
     }
   }
 
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getPackageInfo(String, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public PackageInfo getPackageInfo(String packageName, int flags) throws NameNotFoundException {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getApplicationInfo(String, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public ApplicationInfo getApplicationInfo(String packageName, int flags) throws NameNotFoundException {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getActivityInfo(ComponentName, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public ActivityInfo getActivityInfo(ComponentName className, int flags) throws NameNotFoundException {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getReceiverInfo(ComponentName, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public ActivityInfo getReceiverInfo(ComponentName className, int flags) throws NameNotFoundException {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getServiceInfo(ComponentName, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public ServiceInfo getServiceInfo(ComponentName className, int flags) throws NameNotFoundException {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getInstalledPackages(int)} instead.
-   */
-  @Override
-  @Deprecated
-  public List<PackageInfo> getInstalledPackages(int flags) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#queryIntentActivities(Intent, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public List<ResolveInfo> queryIntentActivities(Intent intent, int flags) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#queryIntentServices(Intent, int)}  instead.
-   */
-  @Override
-  @Deprecated
-  public List<ResolveInfo> queryIntentServices(Intent intent, int flags) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#queryBroadcastReceivers(Intent, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public List<ResolveInfo> queryBroadcastReceivers(Intent intent, int flags) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#resolveActivity(Intent, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public ResolveInfo resolveActivity(Intent intent, int flags) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#resolveService(Intent, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public ResolveInfo resolveService(Intent intent, int flags) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
   @Override
   public void addResolveInfoForIntent(Intent intent, List<ResolveInfo> info) {
     resolveInfoForIntent.put(intent, info);
@@ -535,49 +425,9 @@ public class ShadowPackageManager implements RobolectricPackageManager {
     drawableList.put(intent.getComponent(), drawable);
   }
 
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getApplicationIcon(String)} instead.
-   */
-  @Override
-  @Deprecated
-  public Drawable getApplicationIcon(String packageName) throws NameNotFoundException {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
   @Override
   public void setApplicationIcon(String packageName, Drawable drawable) {
     applicationIcons.put(packageName, drawable);
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getLaunchIntentForPackage(String)} instead.
-   */
-  @Override
-  @Deprecated
-  public Intent getLaunchIntentForPackage(String packageName) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#getApplicationLabel(ApplicationInfo)} instead.
-   */
-  @Override
-  @Deprecated
-  public CharSequence getApplicationLabel(ApplicationInfo info) {
-    throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#setComponentEnabledSetting(ComponentName, int, int)} instead.
-   */
-  @Override
-  @Deprecated
-  public void setComponentEnabledSetting(ComponentName componentName, int newState, int flags) {
-    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override public void setApplicationEnabledSetting(String packageName, int newState, int flags) {
@@ -814,16 +664,6 @@ public class ShadowPackageManager implements RobolectricPackageManager {
   @Override
   public void removePackage(String packageName) {
     packageInfos.remove(packageName);
-  }
-
-  /**
-   * @deprecated We're forced to implement this because we're implementing {@link RobolectricPackageManager} which will
-   * be removed in the next release. Prefer {@link PackageManager#hasSystemFeature(String)} instead.
-   */
-  @Override
-  @Deprecated
-  public boolean hasSystemFeature(String name) {
-    throw new UnsupportedOperationException("Not implemented");
   }
 
   @Override
